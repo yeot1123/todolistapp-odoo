@@ -53,6 +53,18 @@ class TodoTask(models.Model):
         elif self.state == 'complete':
             self.state = 'in_progress'
 
+    def write(self, vals):
+        # ถ้ามีการเปลี่ยน is_done ให้ sync กับ state
+        if 'is_done' in vals:
+            if vals['is_done']:
+                vals['state'] = 'complete'
+            else:
+                # ถ้า state เดิมเป็น complete ให้กลับเป็น draft หรือ in_progress
+                for rec in self:
+                    if rec.state == 'complete':
+                        vals['state'] = 'in_progress'
+        return super(TodoTask, self).write(vals)
+
 class TodoTag(models.Model):
     _name = 'todo.tag'
     _description = 'Todo Tag'

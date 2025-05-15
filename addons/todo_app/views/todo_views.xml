@@ -91,6 +91,24 @@
                 Create your first todo task!
             </p>
             <p>
+                <record id="view_form_todo_task" model="ir.ui.view">
+                    <field name="name">todo.task.form</field>
+                    <field name="model">todo.task</field>
+                    <field name="arch" type="xml">
+                        <form>
+                            <group>
+                                <field name="name" placeholder="Task Title..."/>
+                                <field name="is_done" widget="boolean_toggle"/>
+                                <field name="state" widget="statusbar" options="{'clickable': '1'}"/>
+                                <field name="date_start"/>
+                                <field name="date_deadline"/>
+                                <field name="tag_ids" widget="many2many_tags" options="{'color_field': 'color'}"/>
+                                <field name="participant_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                                <field name="description" placeholder="Add a description..."/>
+                            </group>
+                        </form>
+                    </field>
+                </record>
                 Organize your tasks with deadlines and track their progress.
             </p>
         </field>
