@@ -1,38 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
     <data>
-        <!-- Top menu item -->
+
         <menuitem id="menu_todo_root" 
                   name="Todo List" 
                   sequence="10" 
                   web_icon="todo_app,static/description/icon.png"/>
 
-        <!-- Action สำหรับ Todo Task -->
+
         <record id="action_todo_task" model="ir.actions.act_window">
             <field name="name">Todo Tasks</field>
             <field name="res_model">todo.task</field>
             <field name="view_mode">tree,form</field>
         </record>
 
-        <!-- Menu สำหรับ Task -->
+
         <menuitem id="menu_todo_task" 
                   name="Tasks" 
                   parent="menu_todo_root" 
                   action="action_todo_task" 
                   sequence="10"/>
 
-        <!-- Action สำหรับ Todo Tag -->
-        <record id="action_todo_tag" model="ir.actions.act_window">
-            <field name="name">Tags</field>
-            <field name="res_model">todo.tag</field>
-            <field name="view_mode">tree,form</field>
-        </record>
-
-        <!-- Menu สำหรับ Tag -->
-        <menuitem id="menu_todo_tag" 
-                  name="Tags" 
-                  parent="menu_todo_root" 
-                  action="action_todo_tag" 
-                  sequence="20"/>
+  
     </data>
 </odoo>
