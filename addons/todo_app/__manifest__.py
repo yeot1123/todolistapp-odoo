@@ -7,7 +7,6 @@
     'author': 'Thanaboon',
     'depends': ['base'],
     'data': [
-        'security/todo_security.xml',
         'security/ir.model.access.csv',
         'views/todo_views.xml',
         'views/menu.xml',
