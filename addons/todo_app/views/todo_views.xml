@@ -52,22 +52,7 @@
         </field>
     </record>
 
-    <!-- Tag Views -->
-    <record id="view_form_todo_tag" model="ir.ui.view">
-        <field name="name">todo.tag.form</field>
-        <field name="model">todo.tag</field>
-        <field name="arch" type="xml">
-            <form>
-                <sheet>
-                    <group>
-                        <field name="name"/>
-                        <field name="color" widget="color_picker"/>
-                    </group>
-                </sheet>
-            </form>
-        </field>
-    </record>
-
+    
     <record id="view_tree_todo_tag" model="ir.ui.view">
         <field name="name">todo.tag.tree</field>
         <field name="model">todo.tag</field>
@@ -77,6 +62,10 @@
             </tree>
         </field>
     </record>
+
+
+    
+    <!-- All Action -->
 
     <!-- Actions for Todo Tasks -->
     <record id="action_todo_task_all" model="ir.actions.act_window">

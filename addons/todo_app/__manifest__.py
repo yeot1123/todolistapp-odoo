@@ -9,7 +9,6 @@
     'data': [
         'security/ir.model.access.csv',
         'views/todo_views.xml',
-        'views/menu.xml',
         'data/todo_tags_data.xml',
     ],
     'demo': [],
